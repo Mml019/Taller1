@@ -69,5 +69,34 @@ INSERCIÓ D'UN ELEMENT EN UNA LLISTA ORDENADA
 - Insereix davant el node a cercar que introdueix l'usuari
 -Inserció com execercici 1, a l'esquerra
 
+BEGIN
+    nouelement := Capçalera;
+WHILE nouelement^.info < n i nouelement^.seg != nil DO
+    nouelement := nouelement^.seg;
+    IF nouelement^.seg != nil THEN
+        new(nounode);
+        nounode^ := nouelement^;
+        nouelement^.info := n;
+        nouelement^.seg := nounode;
+    ELSE
+        BEGIN
+        new(nounode);       
+        nounode^.info := n;
+        nouelement^.seg := nounode;
+        END
+    END
+END        
 LLISTA DOBLEMENT ENCADENADES
+
+BEGIN 
+    element :=primer;
+    WHILE element^.seg (igual tachado !=) nil o element^.ant != nil DO
+        BEGIN
+            IF element^.seg != nil THEN
+                element := element^.seg;
+            ELSE
+                element := element^.ant;
+        END
+END 
+
 
